@@ -368,11 +368,11 @@
                                                         <input id="btn-link" class="form-control" placeholder="Link">
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <span id="btn-icon" class="form-control">
+                                                        <label class="btn btn-default" style="margin: 0 10px">
                                                             <input class="form-check-input" type="checkbox" Announcement
-                                                                id="flexCheckDefault">
-                                                            <label>Don't show Icon</label>
-                                                        </span>
+                                                                id="dontshow">
+                                                            Don't show Icon
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -399,20 +399,24 @@
                                         <label for="publish-as" class="pull-right">Publish as</label>
                                     </div>
                                     <div>
-                                        <span style="margin: 10px">
-                                            <input name="IsNews" type="checkbox">
+                                        <label class="btn btn-default" style="margin: 0 10px">
+                                            <input class="form-check-input" type="checkbox" Announcement
+                                                id="flexCheckDefault">
                                             News as a banner on Homepage
-                                        </span>
+                                        </label>
 
-                                        <span style="margin: 10px">
-                                            <input name="IsNews" type="checkbox">
+                                        <label class="btn btn-default" style="margin: 0 10px">
+                                            <input class="form-check-input" type="checkbox" Announcement
+                                                id="flexCheckDefault">
                                             News (Archive Only)
-                                        </span>
+                                        </label>
 
-                                        <span style="margin: 10px;">
-                                            <input name="IsNews" type="checkbox">
+                                        <label class="btn btn-default" style="margin: 0 10px">
+                                            <input class="form-check-input" type="checkbox" Announcement
+                                                id="flexCheckDefault">
                                             Announcement as a banner on Homepage
-                                        </span>
+                                        </label>
+
                                     </div>
                                 </div>
                                 <hr>
@@ -421,16 +425,19 @@
                                         <label for="select-platform" class="pull-right">Select a platform</label>
                                     </div>
                                     <div>
-                                        <span style="margin: 10px">
-                                            <input name="IsNews" type="checkbox" data-bind="checked" Announcement>
+                                        <label class="btn btn-default" style="margin: 0 10px">
+                                            <input class="form-check-input" type="checkbox" Announcement
+                                                id="select-platform">
                                             Webropol 3.0
+                                        </label>
+
                                         </span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="pull-right" style="padding: 10px 16px;">
+                                <div class="pull-right" style="margin: 20px 16px;">
                                     <button type="button"
                                         data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()"
                                         class="btn btn-primary" disabled="">Publish now</button>
