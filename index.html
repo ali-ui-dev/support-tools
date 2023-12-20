@@ -262,6 +262,34 @@
                                 <div id="language-tabs-content" class="tab-content"
                                     data-bind="foreach: LanguageVersions">
                                     <div role="tabpanel" class="tab-pane active" data-bind="css: {active: IsSelected}">
+                                        <div class="row"
+                                            style="background-color: white; margin: 5px 1px; padding: 5px;">
+                                            <div class="col-sm-2">
+                                                <label for="publish-as" class="pull-right">Publish as</label>
+                                            </div>
+
+                                            <div class="btn-toolbar" role="toolbar">
+                                                <div class="hide-radio" role="group" data-toggle="buttons">
+                                                    <div class="btn-group-horizontal">
+                                                        <label class="btn btn-default" style="margin: 0 5px;">
+                                                            <input type="radio" name="options" id="news-as-banner"
+                                                                autocomplete="off" checked="">News as a banner on
+                                                            Homepage
+                                                        </label>
+                                                        <label class="btn btn-default" style="margin: 0 5px;">
+                                                            <input type="radio" name="options" id="news-as-archive"
+                                                                autocomplete="off"> News (Archive Only)
+                                                        </label>
+                                                        <label class="btn btn-default" style="margin: 0 5px;">
+                                                            <input type="radio" name="options"
+                                                                id="announcement-as-banner" autocomplete="off">
+                                                            Announcement as a banner on Homepage
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
 
                                         <div class="row" style="margin-bottom: 1rem; margin-top: 1rem;">
                                             <div class="col-sm-2">
@@ -289,13 +317,13 @@
 
                                         <div class="row" style="margin-bottom: 1rem;">
                                             <div class="col-sm-2">
-                                                <label class="pull-right">Button (Label and
-                                                    Link)</label>
+                                                <label class="pull-right">Announcement Button</label>
                                             </div>
                                             <div class="col-sm-10">
                                                 <div class="row">
                                                     <div class="col-md-3">
-                                                        <input id="btn-lable" class="form-control" placeholder="Label">
+                                                        <input id="btn-lable" class="form-control"
+                                                            placeholder="Watch the video">
                                                     </div>
                                                     <div class="col-md-7">
                                                         <input id="btn-link" class="form-control" placeholder="Link">
@@ -303,15 +331,15 @@
                                                     <div class="col-md-2">
                                                         <label class="btn btn-default">
                                                             <input class="form-check-input" type="checkbox" Announcement
-                                                                id="dontshow">
-                                                            Don't show Icon
+                                                                id="showplayicon">
+                                                            Show Play Icon
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="margin-bottom: 20px;">
                                         <div class="col-sm-2">
                                             <label for="news-content" class="pull-right">Content</label>
                                         </div>
@@ -326,45 +354,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
-                                <div class="row" style="background-color: white; margin: 5px 1px; padding: 5px;">
-                                    <div class="col-sm-2">
-                                        <label for="publish-as" class="pull-right">Publish as</label>
-                                    </div>
-                                    <div>
-                                        <label class="btn btn-default">
-                                            <input class="form-check-input" type="checkbox" Announcement
-                                                id="flexCheckDefault">
-                                            News as a banner on Homepage
-                                        </label>
+                                <div style="display: none;">
+                                    <hr>
+                                    <div class="row"
+                                        style="background-color: white; margin: 5px 1px 10px; padding: 5px;">
+                                        <div class="col-sm-2">
+                                            <label for="select-platform" class="pull-right">Select a platform</label>
+                                        </div>
+                                        <div>
+                                            <label class="btn btn-default">
+                                                <input class="form-check-input" type="checkbox" Announcement
+                                                    id="select-platform">
+                                                Webropol 3.0
+                                            </label>
 
-                                        <label class="btn btn-default">
-                                            <input class="form-check-input" type="checkbox" Announcement
-                                                id="flexCheckDefault">
-                                            News (Archive Only)
-                                        </label>
-
-                                        <label class="btn btn-default">
-                                            <input class="form-check-input" type="checkbox" Announcement
-                                                id="flexCheckDefault">
-                                            Announcement as a banner on Homepage
-                                        </label>
-
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row" style="background-color: white; margin: 5px 1px 10px; padding: 5px;">
-                                    <div class="col-sm-2">
-                                        <label for="select-platform" class="pull-right">Select a platform</label>
-                                    </div>
-                                    <div>
-                                        <label class="btn btn-default">
-                                            <input class="form-check-input" type="checkbox" Announcement
-                                                id="select-platform">
-                                            Webropol 3.0
-                                        </label>
-
-                                        </span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +378,10 @@
                                 <div class="pull-right" style="margin: 20px 16px;">
                                     <button type="button"
                                         data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()"
-                                        class="btn btn-primary" disabled="">Publish now</button>
+                                        class="btn btn-info">Preview</button>
+                                    <button type="button"
+                                        data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()"
+                                        class="btn btn-primary">Publish now</button>
                                     <button type="button" data-bind="click: scheduleNews, enable: isPublishingEnabled()"
                                         class="btn btn-default" disabled="">Schedule</button>
                                     <button type="button" data-bind="click: returnToNewsPage"
