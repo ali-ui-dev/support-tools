@@ -8,6 +8,8 @@
         <link href="./assets/admin.css" rel="stylesheet">
         <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
@@ -293,43 +295,45 @@
                                 </div>
                                 <hr>
                                 <div class="row" style="background-color: white; margin: 5px 1px; padding: 15px 5px;">
-                                    <div class="col-sm-2">
-                                        <label for="publish-as" class="pull-right">
+                                    <div class="col-md-1">
+                                        <label for="publish-as">
                                             Publish as
                                             <span style="color: red;">*</span>
                                         </label>
                                     </div>
-                                    <div class="btn-toolbar" role="toolbar">
-                                        <div class="hide-radio" role="group" data-toggle="buttons">
-                                            <div class="btn-group-horizontal">
-                                                <label class="btn btn-default" style="margin: 0 5px;">
-                                                    <input
-                                                        type="radio"
-                                                        name="options"
-                                                        id="news-as-banner"
-                                                        autocomplete="off"
-                                                        checked=""
-                                                    >
-                                                    News as a banner on Homepage
-                                                </label>
-                                                <label class="btn btn-default" style="margin: 0 5px;">
-                                                    <input
-                                                        type="radio"
-                                                        name="options"
-                                                        id="news-as-archive"
-                                                        autocomplete="off"
-                                                    >
-                                                    News (Archive Only)
-                                                </label>
-                                                <label class="btn btn-default" style="margin: 0 5px;">
-                                                    <input
-                                                        type="radio"
-                                                        name="options"
-                                                        id="announcement-as-banner"
-                                                        autocomplete="off"
-                                                    >
-                                                    Announcement as a banner on Homepage
-                                                </label>
+                                    <div class="col-md-11">
+                                        <div class="btn-toolbar" role="toolbar">
+                                            <div class="hide-radio" role="group" data-toggle="buttons">
+                                                <div class="btn-group-horizontal">
+                                                    <label class="btn btn-default" style="margin: 0 5px;">
+                                                        <input
+                                                            type="radio"
+                                                            name="options"
+                                                            id="news-as-banner"
+                                                            autocomplete="off"
+                                                            checked=""
+                                                        >
+                                                        News as a banner on Homepage
+                                                    </label>
+                                                    <label class="btn btn-default" style="margin: 0 5px;">
+                                                        <input
+                                                            type="radio"
+                                                            name="options"
+                                                            id="news-as-archive"
+                                                            autocomplete="off"
+                                                        >
+                                                        News (Archive Only)
+                                                    </label>
+                                                    <label class="btn btn-default" style="margin: 0 5px;">
+                                                        <input
+                                                            type="radio"
+                                                            name="options"
+                                                            id="announcement-as-banner"
+                                                            autocomplete="off"
+                                                        >
+                                                        Announcement as a banner on Homepage
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
