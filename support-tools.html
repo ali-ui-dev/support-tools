@@ -6,6 +6,7 @@
         <title>Support Tools - Create News</title>
         <link href="./assets/css.css" rel="stylesheet">
         <link href="./assets/admin.css" rel="stylesheet">
+        <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link
             rel="stylesheet"
@@ -471,7 +472,14 @@
                                                 </label>
                                             </div>
                                             <div class="col-sm-10">
-                                                <textarea id="news-content" class="form-control" rows="6"> This is CK Editor</textarea>
+                                                <div id="editor"></div>
+                                                <script>
+                                                    ClassicEditor
+                                                        .create( document.querySelector( '#editor' ) )
+                                                        .catch( error => {
+                                                            console.error( error );
+                                                        } );
+                                                </script>
                                             </div>
                                             <div class="col-sm-10" style="display: none">
                                                 <input id="news-content" class="col-sm-12 form-control" data-bind="textInput: Content">
