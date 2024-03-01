@@ -1,413 +1,545 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Tools - Create News</title>
-    <link href="./assets/css.css" rel="stylesheet">
-    <link href="./assets/admin.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/50ef2d3cf8.css" crossorigin="anonymous">
-</head>
-
-<body id="support-tools">
-    <header class="header">
-
-        <div class="webropol-menu-top non-wds-links">
-            <div class="webropol-menu-top-small-bar">
-                <div class="container">
-                    <header role="menubar">
-                        <div class="container">
-                            <div class="navigation-left">
-                                <div class="dropdown support-tool-language-change">
-                                    <span id="select-lang-menu-title">Language:</span>
-                                    <a href="#" class="dropdown-toggle highlighted-button" title="Select language"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>&nbsp;English</span>
-                                        <b class="caret"></b>
-                                    </a>
-
-                                    <ul class="dropdown-menu lang" aria-labelledby="select-lang-menu-title" role="menu">
-                                        <li role="presentation">
-                                            <a href="#" lang="en" class="lang spinned-link selected" role="menuitem"
-                                                tabindex="-1">English</a>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Support Tools - Create News</title>
+        <link href="./assets/css.css" rel="stylesheet">
+        <link href="./assets/admin.css" rel="stylesheet">
+        <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous"
+        >
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://kit.fontawesome.com/50ef2d3cf8.css" crossorigin="anonymous">
+    </head>
+    <body id="support-tools">
+        <header class="header">
+            <div class="webropol-menu-top non-wds-links">
+                <div class="webropol-menu-top-small-bar">
+                    <div class="container">
+                        <header role="menubar">
+                            <div class="container">
+                                <div class="navigation-left">
+                                    <div class="dropdown support-tool-language-change">
+                                        <span id="select-lang-menu-title">Language:</span>
+                                        <a
+                                            href="#"
+                                            class="dropdown-toggle highlighted-button"
+                                            title="Select language"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                        >
+                                            <span>&nbsp;English</span>
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu lang" aria-labelledby="select-lang-menu-title" role="menu">
+                                            <li role="presentation">
+                                                <a
+                                                    href="#"
+                                                    lang="en"
+                                                    class="lang spinned-link selected"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >English</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a
+                                                    href="#"
+                                                    lang="fi"
+                                                    class="lang spinned-link "
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >Suomi</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a
+                                                    href="#"
+                                                    lang="de"
+                                                    class="lang spinned-link "
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >Deutsch</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a
+                                                    href="#"
+                                                    lang="fr"
+                                                    class="lang spinned-link "
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >Français</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a
+                                                    href="#"
+                                                    lang="sv"
+                                                    class="lang spinned-link "
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >Svenska</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="navigation-right">
+                                    <ul class="">
+                                        <li class="dropdown pull-left">
+                                            <a
+                                                href="#"
+                                                class="dropdown-toggle highlighted-button"
+                                                role="button"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                            >
+                                                <div style="padding: 3px">
+                                                    <i class="fa fa-user"></i>
+                                                    John Doe
+                                                </div>
+                                            </a>
                                         </li>
-                                        <li role="presentation">
-                                            <a href="#" lang="fi" class="lang spinned-link " role="menuitem"
-                                                tabindex="-1">Suomi</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#" lang="de" class="lang spinned-link " role="menuitem"
-                                                tabindex="-1">Deutsch</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#" lang="fr" class="lang spinned-link " role="menuitem"
-                                                tabindex="-1">Français</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#" lang="sv" class="lang spinned-link " role="menuitem"
-                                                tabindex="-1">Svenska</a>
+                                        <li class="divider-vertical"></li>
+                                        <li class="simple-link">
+                                            <button id="logout" class="logout highlighted-button button-like-hyperlink" onclick="">
+                                                Logout
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="navigation-right">
-                                <ul class="">
-                                    <li class="dropdown pull-left">
-                                        <a href="#" class="dropdown-toggle highlighted-button" role="button"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <div style="padding: 3px"><i class="fa fa-user"></i>John Doe
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="divider-vertical"></li>
-                                    <li class="simple-link">
-                                        <button id="logout" class="logout highlighted-button button-like-hyperlink"
-                                            onclick="">
-                                            Logout
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+                        </header>
+                    </div>
+                </div>
+                <div class="webropol-menu-top-big-bar">
+                    <div class="container">
+                        <div class="logo-container">
+                            <a href="#">
+                                <div class="logo-text pull-left">Support tools</div>
+                            </a>
                         </div>
-                    </header>
-                </div>
-            </div>
-            <div class="webropol-menu-top-big-bar">
-                <div class="container">
-                    <div class="logo-container">
-                        <a href="#">
-                            <div class="logo-text pull-left">Support tools</div>
-                        </a>
-                    </div>
-                    <div class="button-panel pull-right">
-
-                        <ul class="nav nav-bar">
-                            <li>
-                                <a href="#">Switch</a>
-                            </li>
-                            <li>
-                                <a href="#">Audit log</a>
-                            </li>
-
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">User management <span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li role="presentation"><a href="#" tabindex="-1">Company</a></li>
-                                    <li role="presentation"><a href="#" role="menuitem" tabindex="-1">User
-                                            Environment</a></li>
-                                    <li role="presentation"><a href="#" role="menuitem" tabindex="-1">User</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Move survey</a>
-                            </li>
-                            <li>
-                                <a href="#">Wott
-                                    central console</a>
-                            </li>
-                            <li>
-                                <a href="#">Statistics</a>
-                            </li>
-                            <li>
-                                <a href="#">Elmah</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="content">
-        <div class="container">
-
-            <div class="support-tools-breadcrumbs">
-                <a href="#">Support tools</a><span> / </span>
-                <a href="#">News</a><span> / </span>
-                <span>Create News and Announcement</span>
-            </div>
-
-            <div id="create-news">
-                <section>
-                    <article>
-                        <h1>Create News and Announcement</h1>
-                        <hr>
-                        <form class="form-horizontal">
-
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <label class="col-sm-12 " for="allcountries">Country</label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span class="multiselect-native-select"><select id="allcountries"
-                                                class="form-control" multiple="multiple" data-bind="">
-                                                <option Announcement>Andorra</option>
-                                                <option Announcement>Belgium</option>
-                                                <option Announcement>Finland</option>
-                                                <option Announcement>Germany</option>
-                                            </select>
-                                            <div class="btn-group" style="width: 100%;">
-                                                <button type="button"
-                                                    class="multiselect dropdown-toggle form-control dropdown-button"
-                                                    data-toggle="dropdown" title="Select default country"
-                                                    style="width: 100%; overflow: hidden; text-overflow: ellipsis;"><span
-                                                        class="multiselect-selected-text">Select default country</span>
-                                                    <i class="fa-solid fa-angle-down pull-right"
-                                                        style="margin-top: 5px;"></i>
-                                                </button>
-                                                <ul class="multiselect-container dropdown-menu">
-                                                    <li><a tabindex="0"><label class="checkbox" title="Finland"><input
-                                                                    type="checkbox" Announcement>
-                                                                Finland</label></a></li>
-                                                    <li><a tabindex="0"><label class="checkbox" title="Germany"><input
-                                                                    type="checkbox" Announcement>
-                                                                Germany</label></a></li>
-                                                    <li><a tabindex="0"><label class="checkbox" title="Norway"><input
-                                                                    type="checkbox" Announcement>
-                                                                Norway</label></a></li>
-                                                    <li><a tabindex="0"><label class="checkbox" title="Poland"><input
-                                                                    type="checkbox" Announcement>
-                                                                Poland</label></a></li>
-                                                </ul>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <label class="col-sm-12 " for="alllanguages">Default Language</label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <select id="alllanguages" class="form-control">
-                                            <option Announcement>Select language</option>
-                                            <option Announcement>English</option>
-                                            <option Announcement>Finnish</option>
-                                            <option Announcement>German</option>
-                                            <option Announcement>Swedish</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul id="language-tabs" class="nav nav-tabs" role="tablist">
-                                <li role="presentation" data-bind="css: {active: IsSelected}" class="active">
-                                    <a role="tab" data-toggle="tab" href="#" style="padding: 15px 30px">English</a>
-                                    <span class="removeLanguage" href="#" data-bind="click: $root.removeLanguage"
-                                        style="padding: 2px;"><i class="fa fa-close"></i></span>
+                        <div class="button-panel pull-right">
+                            <ul class="nav nav-bar">
+                                <li>
+                                    <a href="#">Switch</a>
                                 </li>
-                                <!-- /ko-->
-                                <li role="presentation">
-                                    <div class="dropdown" style="padding: 8px">
-                                        <button class="btn dropdown-toggle"
-                                            style="background-color: white; border-color: gray;" type="button"
-                                            id="dropdownLanguages" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            + Add Language
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownLanguages" role="menu">
-                                            <li role="presentation">
-                                                <a href="#"
-                                                    data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
-                                                    role="menuitem" tabindex="-1">English</a>
-                                            </li>
-
-                                            <li role="presentation">
-                                                <a href="#"
-                                                    data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
-                                                    role="menuitem" tabindex="-1">Finnish</a>
-                                            </li>
-
-                                            <li role="presentation">
-                                                <a href="#"
-                                                    data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
-                                                    role="menuitem" tabindex="-1">German</a>
-                                            </li>
-
-                                            <li role="presentation">
-                                                <a href="#"
-                                                    data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
-                                                    role="menuitem" tabindex="-1">French</a>
-                                            </li>
-
-                                            <li role="presentation">
-                                                <a href="#"
-                                                    data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
-                                                    role="menuitem" tabindex="-1">Swedish</a>
-                                            </li>
-                                            <!-- /ko-->
-                                        </ul>
-                                    </div>
+                                <li>
+                                    <a href="#">Audit log</a>
+                                </li>
+                                <li class="dropdown active">
+                                    <a
+                                        href="#"
+                                        class="dropdown-toggle"
+                                        role="button"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >User management
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li role="presentation">
+                                            <a href="#" tabindex="-1">Company</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#" role="menuitem" tabindex="-1">
+                                                User
+                                            Environment
+                                            </a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#" role="menuitem" tabindex="-1">User</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a
+                                        href="#"
+                                        class="dropdown-toggle"
+                                        role="button"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >Manage
+                                        <span class="caret"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">Move survey</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Wott
+                                    central console
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">Statistics</a>
+                                </li>
+                                <li>
+                                    <a href="#">Elmah</a>
                                 </li>
                             </ul>
-
-                            <div class="create-a-news" style="border: solid #ddd ; border-width: 0px 1px 1px 1px;">
-                                <div id="language-tabs-content" class="tab-content"
-                                    data-bind="foreach: LanguageVersions">
-                                    <div role="tabpanel" class="tab-pane active" data-bind="css: {active: IsSelected}">
-                                        <div class="row"
-                                            style="background-color: white; margin: 5px 1px; padding: 5px;">
-                                            <div class="col-sm-2">
-                                                <label for="publish-as" class="pull-right">Publish as <span
-                                                        style="color: red;">*</span></label>
-                                            </div>
-
-                                            <div class="btn-toolbar" role="toolbar">
-                                                <div class="hide-radio" role="group" data-toggle="buttons">
-                                                    <div class="btn-group-horizontal">
-                                                        <label class="btn btn-default" style="margin: 0 5px;">
-                                                            <input type="radio" name="options" id="news-as-banner"
-                                                                autocomplete="off" checked="">News as a banner on
-                                                            Homepage
-                                                        </label>
-                                                        <label class="btn btn-default" style="margin: 0 5px;">
-                                                            <input type="radio" name="options" id="news-as-archive"
-                                                                autocomplete="off"> News (Archive Only)
-                                                        </label>
-                                                        <label class="btn btn-default" style="margin: 0 5px;">
-                                                            <input type="radio" name="options"
-                                                                id="announcement-as-banner" autocomplete="off">
-                                                            Announcement as a banner on Homepage
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-
-                                        <div class="row" style="margin-bottom: 1rem; margin-top: 1rem;">
-                                            <div class="col-sm-2">
-                                                <label for="news-subject" class="pull-right">Subject <span
-                                                        style="color: red;">*</span></label>
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <input id="news-subject" class="col-sm-12 form-control"
-                                                    data-bind="textInput: Subject">
-                                            </div>
-                                        </div>
-
-                                        <div class="row" style="margin-bottom: 1rem;">
-                                            <div class="col-sm-2">
-                                                <label for="news-description" class="pull-right">Short
-                                                    Description <span style="color: red;">*</span></label>
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <input id="news-description" class="col-sm-12 form-control"
-                                                    data-bind="textInput: Subject">
-                                                <div class="col-sm-12">
-                                                    <i>Short description to be added to the banner of the Homepage</i>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row" style="margin-bottom: 1rem;">
-                                            <div class="col-sm-2">
-                                                <label class="pull-right">Announcement Button</label>
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <input id="btn-lable" class="form-control"
-                                                            placeholder="Watch the video">
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <input id="btn-link" class="form-control" placeholder="Link">
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <label class="btn btn-default">
-                                                            <input class="form-check-input" type="checkbox" Announcement
-                                                                id="showplayicon">
-                                                            Show Play Icon
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-bottom: 20px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container">
+                <div class="support-tools-breadcrumbs">
+                    <a href="#">Support tools</a>
+                    <span> /</span>
+                    <a href="#">News</a>
+                    <span> /</span>
+                    <span>Create News and Announcement</span>
+                </div>
+                <div id="create-news">
+                    <section>
+                        <article>
+                            <h1>Create News and Announcement</h1>
+                            <hr>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="row">
                                         <div class="col-sm-2">
-                                            <label for="news-content" class="pull-right">Content <span
-                                                    style="color: red;">*</span></label>
+                                            <label class="col-sm-12 " for="allcountries">Country</label>
                                         </div>
-                                        <div class="col-sm-10">
-                                            <textarea id="news-content" class="form-control"
-                                                rows="6"> This is CK Editor </textarea>
-                                        </div>
-
-                                        <div class="col-sm-10" style="display: none">
-                                            <input id="news-content" class="col-sm-12 form-control"
-                                                data-bind="textInput: Content">
+                                        <div class="col-sm-3">
+                                            <span class="multiselect-native-select">
+                                                <select
+                                                    id="allcountries"
+                                                    class="form-control"
+                                                    multiple="multiple"
+                                                    data-bind=""
+                                                >
+                                                    <option Announcement>Andorra</option>
+                                                    <option Announcement>Belgium</option>
+                                                    <option Announcement>Finland</option>
+                                                    <option Announcement>Germany</option>
+                                                </select>
+                                                <div class="btn-group" style="width: 100%;">
+                                                    <button
+                                                        type="button"
+                                                        class="multiselect dropdown-toggle form-control dropdown-button"
+                                                        data-toggle="dropdown"
+                                                        title="Select default country"
+                                                        style="width: 100%; overflow: hidden; text-overflow: ellipsis;"
+                                                    >
+                                                        <span class="multiselect-selected-text">Select default country</span>
+                                                        <i class="fa-solid fa-angle-down pull-right" style="margin-top: 5px;"></i>
+                                                    </button>
+                                                    <ul class="multiselect-container dropdown-menu">
+                                                        <li>
+                                                            <a tabindex="0">
+                                                                <label class="checkbox" title="Finland">
+                                                                    <input type="checkbox" Announcement>
+                                                                    Finland
+                                                                </label>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a tabindex="0">
+                                                                <label class="checkbox" title="Germany">
+                                                                    <input type="checkbox" Announcement>
+                                                                    Germany
+                                                                </label>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a tabindex="0">
+                                                                <label class="checkbox" title="Norway">
+                                                                    <input type="checkbox" Announcement>
+                                                                    Norway
+                                                                </label>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a tabindex="0">
+                                                                <label class="checkbox" title="Poland">
+                                                                    <input type="checkbox" Announcement>
+                                                                    Poland
+                                                                </label>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="display: none;">
-                                    <hr>
-                                    <div class="row"
-                                        style="background-color: white; margin: 5px 1px 10px; padding: 5px;">
+                                <div class="form-group">
+                                    <div class="row">
                                         <div class="col-sm-2">
-                                            <label for="select-platform" class="pull-right">Select a platform</label>
+                                            <label class="col-sm-12 " for="alllanguages">Default Language</label>
                                         </div>
-                                        <div>
-                                            <label class="btn btn-default">
-                                                <input class="form-check-input" type="checkbox" Announcement
-                                                    id="select-platform">
-                                                Webropol 3.0
-                                            </label>
-
+                                        <div class="col-sm-3">
+                                            <select id="alllanguages" class="form-control">
+                                                <option Announcement>Select language</option>
+                                                <option Announcement>English</option>
+                                                <option Announcement>Finnish</option>
+                                                <option Announcement>German</option>
+                                                <option Announcement>Swedish</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul id="language-tabs" class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" data-bind="css: {active: IsSelected}" class="active">
+                                        <a
+                                            role="tab"
+                                            data-toggle="tab"
+                                            href="#"
+                                            style="padding: 15px 30px"
+                                        >English</a>
+                                        <span
+                                            class="removeLanguage"
+                                            href="#"
+                                            data-bind="click: $root.removeLanguage"
+                                            style="padding: 2px;"
+                                        >
+                                            <i class="fa fa-close"></i>
+                                        </span>
+                                    </li>
+                                    <!-- /ko-->
+                                    <li role="presentation">
+                                        <div class="dropdown" style="padding: 8px">
+                                            <button
+                                                class="btn dropdown-toggle"
+                                                style="background-color: white; border-color: gray;"
+                                                type="button"
+                                                id="dropdownLanguages"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                            >
+                                                + Add Language
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownLanguages" role="menu">
+                                                <li role="presentation">
+                                                    <a
+                                                        href="#"
+                                                        data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
+                                                        role="menuitem"
+                                                        tabindex="-1"
+                                                    >English</a>
+                                                </li>
+                                                <li role="presentation">
+                                                    <a
+                                                        href="#"
+                                                        data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
+                                                        role="menuitem"
+                                                        tabindex="-1"
+                                                    >Finnish</a>
+                                                </li>
+                                                <li role="presentation">
+                                                    <a
+                                                        href="#"
+                                                        data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
+                                                        role="menuitem"
+                                                        tabindex="-1"
+                                                    >German</a>
+                                                </li>
+                                                <li role="presentation">
+                                                    <a
+                                                        href="#"
+                                                        data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
+                                                        role="menuitem"
+                                                        tabindex="-1"
+                                                    >French</a>
+                                                </li>
+                                                <li role="presentation">
+                                                    <a
+                                                        href="#"
+                                                        data-bind="text: LanguageDescription, attr: { id: LanguageId }, click: $root.addLanguage"
+                                                        role="menuitem"
+                                                        tabindex="-1"
+                                                    >Swedish</a>
+                                                </li>
+                                                <!-- /ko-->
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="create-a-news" style="border: solid #ddd ; border-width: 0px 1px 1px 1px;">
+                                    <div id="language-tabs-content" class="tab-content" data-bind="foreach: LanguageVersions">
+                                        <div role="tabpanel" class="tab-pane active" data-bind="css: {active: IsSelected}">
+                                            <div class="row" style="background-color: white; margin: 5px 1px; padding: 5px;">
+                                                <div class="col-sm-2">
+                                                    <label for="publish-as" class="pull-right">Publish as
+                                                        <span style="color: red;">*</span>
+                                                    </label>
+                                                </div>
+                                                <div class="btn-toolbar" role="toolbar">
+                                                    <div class="hide-radio" role="group" data-toggle="buttons">
+                                                        <div class="btn-group-horizontal">
+                                                            <label class="btn btn-default" style="margin: 0 5px;">
+                                                                <input
+                                                                    type="radio"
+                                                                    name="options"
+                                                                    id="news-as-banner"
+                                                                    autocomplete="off"
+                                                                    checked=""
+                                                                >
+                                                                News as a banner on
+                                                            Homepage
+                                                            </label>
+                                                            <label class="btn btn-default" style="margin: 0 5px;">
+                                                                <input
+                                                                    type="radio"
+                                                                    name="options"
+                                                                    id="news-as-archive"
+                                                                    autocomplete="off"
+                                                                >
+                                                                News (Archive Only)
+                                                            </label>
+                                                            <label class="btn btn-default" style="margin: 0 5px;">
+                                                                <input
+                                                                    type="radio"
+                                                                    name="options"
+                                                                    id="announcement-as-banner"
+                                                                    autocomplete="off"
+                                                                >
+                                                                Announcement as a banner on Homepage
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row" style="margin-bottom: 1rem; margin-top: 1rem;">
+                                                <div class="col-sm-2">
+                                                    <label for="news-subject" class="pull-right">Subject
+                                                        <span style="color: red;">*</span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <input id="news-subject" class="col-sm-12 form-control" data-bind="textInput: Subject">
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-bottom: 1rem;">
+                                                <div class="col-sm-2">
+                                                    <label for="news-description" class="pull-right">
+                                                        Short
+                                                    Description
+                                                        <span style="color: red;">*</span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <input id="news-description" class="col-sm-12 form-control" data-bind="textInput: Subject">
+                                                    <div class="col-sm-12">
+                                                        <i>Short description to be added to the banner of the Homepage</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-bottom: 1rem;">
+                                                <div class="col-sm-2">
+                                                    <label class="pull-right">Announcement Button</label>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <input id="btn-lable" class="form-control" placeholder="Watch the video">
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input id="btn-link" class="form-control" placeholder="Link">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <label class="btn btn-default">
+                                                                <input
+                                                                    class="form-check-input"
+                                                                    type="checkbox"
+                                                                    Announcement
+                                                                    id="showplayicon"
+                                                                >
+                                                                Show Play Icon
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 20px;">
+                                            <div class="col-sm-2">
+                                                <label for="news-content" class="pull-right">Content
+                                                    <span style="color: red;">*</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <div id="editor"></div>
+                                                <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#editor' ) )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <hr>
+                                        <div class="row" style="background-color: white; margin: 5px 1px 10px; padding: 5px;">
+                                            <div class="col-sm-2">
+                                                <label for="select-platform" class="pull-right">Select a platform</label>
+                                            </div>
+                                            <div>
+                                                <label class="btn btn-default">
+                                                    <input
+                                                        class="form-check-input"
+                                                        type="checkbox"
+                                                        Announcement
+                                                        id="select-platform"
+                                                    >
+                                                    Webropol 3.0
+                                                </label>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <!-- Some of the buttons should be disabled until the right options are selected -->
                                 <div class="pull-right" style="margin: 20px 16px;">
-                                    <button type="button"
-                                        data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()"
-                                        class="btn btn-info">Preview</button>
-                                    <button type="button"
-                                        data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()"
-                                        class="btn btn-primary">Publish now</button>
-                                    <button type="button" data-bind="click: scheduleNews, enable: isPublishingEnabled()"
-                                        class="btn btn-default" disabled="">Schedule</button>
-                                    <button type="button" data-bind="click: returnToNewsPage"
-                                        class="btn btn-default">Cancel</button>
+                                    <button type="button" data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()" class="btn btn-info">Preview</button>
+                                    <button type="button" data-bind="click: showPublishNewsPopup, enable: isPublishingEnabled()" class="btn btn-primary">Publish now</button>
+                                    <button
+                                        type="button"
+                                        data-bind="click: scheduleNews, enable: isPublishingEnabled()"
+                                        class="btn btn-default"
+                                        disabled=""
+                                    >Schedule</button>
+                                    <button type="button" data-bind="click: returnToNewsPage" class="btn btn-default">Cancel</button>
                                 </div>
                             </div>
-
                         </form>
                     </article>
                 </section>
-
             </div>
-
         </div>
-
-        <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-hidden="true"
-            style="display: none; opacity: 1;">
-
+        <div
+            class="modal fade"
+            id="previewModal"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+            style="display: none; opacity: 1;"
+        >
             <div class="modal-dialog modal-dialog-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
                             <i class="fas fa-times" aria-hidden="true"></i>
                         </button>
                         <h1 class="dialog-header-with-icon text-center">
@@ -415,7 +547,6 @@
                         </h1>
                     </div>
                     <div class="modal-body">
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="news-preview-container"></div>
@@ -427,10 +558,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </body>
-
 </html>
